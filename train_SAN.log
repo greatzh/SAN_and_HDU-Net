@@ -1,14 +1,0 @@
-  0%|          | 0/100 [00:00<?, ?it/s]  5%|▌         | 5/100 [00:00<00:02, 43.20it/s] 10%|█         | 10/100 [00:00<00:02, 33.43it/s] 14%|█▍        | 14/100 [00:00<00:02, 33.14it/s] 18%|█▊        | 18/100 [00:00<00:02, 35.30it/s] 23%|██▎       | 23/100 [00:00<00:02, 36.16it/s] 28%|██▊       | 28/100 [00:00<00:01, 37.92it/s] 33%|███▎      | 33/100 [00:00<00:01, 38.94it/s] 38%|███▊      | 38/100 [00:01<00:01, 38.85it/s] 42%|████▏     | 42/100 [00:01<00:01, 38.80it/s] 47%|████▋     | 47/100 [00:01<00:01, 39.08it/s] 51%|█████     | 51/100 [00:01<00:01, 38.24it/s] 55%|█████▌    | 55/100 [00:01<00:01, 38.14it/s] 59%|█████▉    | 59/100 [00:01<00:01, 37.20it/s] 63%|██████▎   | 63/100 [00:01<00:01, 36.21it/s] 68%|██████▊   | 68/100 [00:01<00:00, 38.20it/s] 73%|███████▎  | 73/100 [00:01<00:00, 40.58it/s] 78%|███████▊  | 78/100 [00:02<00:00, 37.74it/s] 84%|████████▍ | 84/100 [00:02<00:00, 39.57it/s] 88%|████████▊ | 88/100 [00:02<00:00, 38.02it/s] 92%|█████████▏| 92/100 [00:02<00:00, 34.58it/s] 96%|█████████▌| 96/100 [00:02<00:00, 35.76it/s]100%|██████████| 100/100 [00:02<00:00, 34.70it/s]100%|██████████| 100/100 [00:02<00:00, 37.08it/s]
-  0%|          | 0/12 [00:00<?, ?it/s]  0%|          | 0/12 [00:01<?, ?it/s]
-Traceback (most recent call last):
-  File "/home/ipprlab/Documents/GRAD/SAN_and_HDU-Net/SAN/generate_data.py", line 97, in <module>
-    _, prob = predictor(real_imgs.to(torch.float32) / 255)
-  File "/home/ipprlab/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/home/ipprlab/Documents/GRAD/SAN_and_HDU-Net/SAN/models.py", line 37, in forward
-    x = self.up3(x, x2)
-  File "/home/ipprlab/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/home/ipprlab/Documents/GRAD/SAN_and_HDU-Net/SAN/unet_parts.py", line 66, in forward
-    x = torch.cat([x2, x1], dim=1)
-RuntimeError: CUDA out of memory. Tried to allocate 512.00 MiB (GPU 0; 7.79 GiB total capacity; 5.61 GiB already allocated; 80.25 MiB free; 6.09 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
