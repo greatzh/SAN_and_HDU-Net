@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name                     san
+#SBATCH --job-name                     test
 #SBATCH --partition                    gpu-normal
 #SBATCH --nodes                        1
 #SBATCH --tasks-per-node               6
@@ -8,8 +8,8 @@
 #SBATCH --mem                             40G
 #SBATCH --gres                          gpu:1
 #SBATCH --constraint                    GTX1080
-#SBATCH --output                        san.%j.out
-#SBATCH --error                         san.%j.err
+#SBATCH --output                        test.%j.out
+#SBATCH --error                         test.%j.err
 #SBATCH --mail-type		ALL
 #SBATCH --mail-user		zh.zhang@connect.um.edu.mo
  
@@ -24,4 +24,4 @@ ulimit -s unlimited
 # singularity exec --nv --bind /data:/data /share/apps/singularity/simg/pytorch/miniconda3-pytorch bash -c "source activate py36; which python;pip list;python -c 'import torch as t; print(t.cuda.is_available(),t.cuda.device_count())'"
 # singularity exec --nv --bind /data:/data /share/apps/singularity/simg/pytorch/miniconda3-pytorch bash -c "bash train_SAN.sh"
 echo $CUDA_VISIBLE_DEVICES
-singularity exec --nv --bind /data:/data /share/apps/singularity/simg/pytorch/miniconda3-pytorch.simg bash -c "bash train_SAN.sh"
+singularity exec --nv --bind /data:/data /share/apps/singularity/simg/pytorch/miniconda3-pytorch.simg python test_GPU.py

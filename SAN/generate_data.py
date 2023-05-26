@@ -19,6 +19,7 @@ from options_GAN import opt
 opt = opt()
 
 cuda = True if torch.cuda.is_available() else False
+print('cuda:', cuda)
 
 
 def augs_for_insert_object(p=0.5):
