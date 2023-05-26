@@ -1,0 +1,1 @@
+python SAN/generate_data.py > train_SAN.log 2>&1

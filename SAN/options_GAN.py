@@ -3,12 +3,15 @@ import argparse
 def opt():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--save_path_img', type=str, default='/data/Dataset/SAN/Result/img/')
-    parser.add_argument('--save_path_mask', type=str, default='/data/Dataset/SAN/Result/msk/')
+    # /data/home/mc05374/dataset/SAN/train2017
+    # /data/Dataset/SAN/train2017/
+    # /data/home/mc05374/dataset/SAN/Result
+    parser.add_argument('--save_path_img', type=str, default='/data/home/mc05374/dataset/SAN/Result/img/')
+    parser.add_argument('--save_path_mask', type=str, default='/data/home/mc05374/dataset/SAN/Result/msk/')
     # parser.add_argument('--img_train2', type=str, default='/home/hdd_2T/HDU-Net/SAN/data/original/tam/')
     # parser.add_argument('--mask_train2', type=str, default='/home/hdd_2T/HDU-Net/SAN/data/original/mask/')
-    parser.add_argument('--img_train2', type=str, default='/data/Dataset/SAN/train2017/')
-    parser.add_argument('--mask_train2', type=str, default='/data/Dataset/SAN/train2017_mask/')
+    parser.add_argument('--img_train2', type=str, default='/data/home/mc05374/dataset/SAN/train2017/')
+    parser.add_argument('--mask_train2', type=str, default='/data/home/mc05374/dataset/SAN/train2017_mask/')
     # parser.add_argument('--img_train2', type=str, default='C:/Users\Administrator\Desktop\Datasets\COCO\splicing\img/')
     # parser.add_argument('--mask_train2', type=str, default='C:/Users\Administrator\Desktop\Datasets\COCO\splicing\mask/')
     # parser.add_argument('--img_height', type=int, default=256)
