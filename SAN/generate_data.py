@@ -67,7 +67,7 @@ def select_proximate_patch(img_Inf, Inf_dict):
 
 if __name__ == '__main__':
     predictor = Predictor().cuda()
-    model = 'best_model.pth'
+    model = 'best_model_for_SAN.pth'
     predictor.load_state_dict(torch.load(model))
 
     all_instances, lightInf_dict, clarity_dict, complexity_dict = extract_all_instances(opt.img_train2, opt.mask_train2)
@@ -162,5 +162,5 @@ if __name__ == '__main__':
 
             num_generate_img += 1
 
-        if num_generate_img > 120000:
+        if num_generate_img > 100:
             break
